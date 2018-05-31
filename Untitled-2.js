@@ -41,7 +41,7 @@ function changeObject (objectPath, key, value){
 changeObject(Sanger, Sanger.healthCare, Sanger.healthCare = "walrus")
 console.log(Sanger.healthCare)
 
-const art = document.createElement("article");
+/*const art = document.createElement("article");
 const text0 = document.createTextNode(Sanger.politicalDistrict);
 const text1 = document.createTextNode(Sanger.issues.taxes);
 const text2 = document.createTextNode(Sanger.issues.jobs);
@@ -54,6 +54,15 @@ art.appendChild(text2);
 art.appendChild(text3);
 art.appendChild(text4);
 art.appendChild(text5);
-art.setAttribute("id",Sanger.politicalDistrict)
+art.setAttribute("id",Sanger.politicalDistrict)*/
 
-document.body.appendChild(art);
+//document.body.appendChild(art);//
+let psUlRef = document.createElement("Ul")
+
+const platformStatements = Sanger.issues
+for(ps in platformStatements){
+    let liRef = document.createElement("li")
+    liRef.textContent = `${ps}: ${platformStatements[ps]}`
+    psUlRef.appendChild(liRef)
+}
+document.body.appendChild(psUlRef);
